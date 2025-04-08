@@ -1,0 +1,207 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 30% 97%; /* #FFF8E7 Warm cream */
+    --foreground: 30 35% 15%; /* #432C1C Dark brown */
+
+    --card: 36 25% 95%;
+    --card-foreground: 30 35% 15%;
+
+    --popover: 36 25% 95%;
+    --popover-foreground: 30 35% 15%;
+
+    --primary: 23 90% 55%; /* #E87203 Saffron orange */
+    --primary-foreground: 36 100% 97%;
+
+    --secondary: 150 52% 40%; /* #1F9D6E Indian green */
+    --secondary-foreground: 36 100% 97%;
+
+    --muted: 36 15% 85%;
+    --muted-foreground: 30 20% 40%;
+
+    --accent: 342 80% 55%; /* #D62264 Deep pink */
+    --accent-foreground: 36 100% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 100% 97%;
+
+    --border: 30 15% 80%;
+    --input: 30 15% 80%;
+    --ring: 23 90% 55%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-opacity-90 bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-12;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-primary rounded-md font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary rounded-md font-medium transition-all duration-300 hover:bg-secondary/90 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-accent {
+    @apply px-6 py-3 bg-accent rounded-md font-medium transition-all duration-300 hover:bg-accent/90 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border border-primary text-primary rounded-md font-medium transition-all duration-300 hover:bg-primary/10 hover:-translate-y-1;
+  }
+  
+  .indian-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e87203' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6h-2c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Indian-inspired decorative elements */
+  .mandala-divider {
+    @apply h-10 w-full my-6 bg-contain bg-center bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath fill='%23e87203' d='M0,5 H40 M60,5 H100 M45,5 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0'/%3E%3C/svg%3E");
+  }
+  
+  .spice-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d62264' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+/* Animations for scrolling effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 1s ease forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(232, 114, 3, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(36 30% 97%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
