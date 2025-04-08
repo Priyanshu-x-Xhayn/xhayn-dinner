@@ -1,5 +1,5 @@
 
-# Aurora Eats - Futuristic Restaurant Website
+# Xhayn Dinner - Futuristic Restaurant Website
 
 A modern, responsive website for a futuristic fine dining restaurant. This project showcases a premium restaurant experience through elegant design and interactive elements.
 
@@ -16,6 +16,7 @@ A modern, responsive website for a futuristic fine dining restaurant. This proje
 ## Tech Stack
 
 - React
+- Next JS
 - TypeScript 
 - Tailwind CSS for styling
 - shadcn-ui component library
@@ -37,7 +38,7 @@ A modern, responsive website for a futuristic fine dining restaurant. This proje
 
 ## Project URL
 
-**URL**: https://lovable.dev/projects/5b93a2ac-d95f-45af-abdf-590d3d950412
+
 
 ## Future Enhancements
 
@@ -47,6 +48,4 @@ A modern, responsive website for a futuristic fine dining restaurant. This proje
 - Chef's blog
 - Virtual tour of the restaurant
 
-## Credits
 
-This project was built with Lovable.
